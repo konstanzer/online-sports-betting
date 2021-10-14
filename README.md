@@ -1,11 +1,26 @@
-#⚾ Finding a Profitable Baseball Betting Algorithm ⚾
+# ⚾ Does a profitble betting algorithm exist? ⚾
 
-My favorite team, the New York Yankees, was eliminated by their rival, the Boston Red Sox, in this year's American League wildcard game. Normally, when the Yankees season ends, I lose interest in the rest of the season but what if I raised the stakes, and thereby my interest, by placing small bets on the outcomes of the remaining games? Furthermore, what if I used my knowledge of baseball and data science to design an algorithm that would be profitable in the long-run? These were the questions that began this project.
+## Background (long)
 
-Betting algorithms are programs designed to identify profitable betting opportunities — either **value** bets or **arbitrage** bets — by analyzing large amounts of data. 
+I placed my first bet when I was 12 years-old. I wagered five dollars that the New York Yankees would defeat the Arizona Diamondbacks in the World Series. I lost the bet - the Yankees lost in a seven-game heartbreaker. I, being a sore loser, paid my debt in a lunch bag filled with 500 pennies.
 
-* **Value betting algorithms** are the commonest type of betting algorithm. These algorithms collect data from thousands of past sporting matches, estimate the probability of bettable outcomes, and identify bookmakers offering odds on those outcomes that seem favorable. Finding value bets boils down to finding bets with an **expected value** greater than the stake or wager of the bet. The expected value can be thought of as the average profit or loss you would make on the bet if you made if many times over.
+Despite the outcome, it was a prudent bet. No betting exchange would not have given me even odds on the heavily favorited Yankees. The truth is, on every event on which a betting exchange offers odds, the odds are offered at below fair value. It functions like an American roulette wheel: the probability of black is not 18/36 but 18/38 because the house claims 0 or 00 for itself. A bettor has little chance to outperform, or even match, the betting exchange's forecast models, which are created by teams of well-funded data scientists. The reality it that any sports betting strategy a long-term loser. Well, almost any strategy.
 
-* **Arbitrage betting algorithms** take advantage of mismatched or patterned odds for a certain sporting outcome. It happens when a better can place a bet at favorable odds and then place a bet against his original bet (thereby guaranteeing a profit) once the odds have moved. They place no importance on calculating the probability of sporting outcomes. Instead, they look for patterns in odds within or between betting exchanges.
+Betting algorithms are programs designed to identify profitable betting opportunities by analyzing large amounts of data. Most fall into one of two categries: **value** bets or **arbitrage** bets.
 
-Generating the tip is only the first part. The second is determining the appropriate bet size, also called **bankroll management**.  Since you can't be 100% sure that any single bet will be correct, you can't risk too much of your portfolio on any one bet. Bankroll management isn't just about placing small bets relative to your bankroll but also adapting bet size to the probability of an outcome. If an outcome is very likely, an algorithm may wager more.
+* **Value betting algorithms** are the commonest type of betting algorithm. These algorithms collect data from thousands of past sporting matches, estimate the probability of bettable outcomes, and identify bookmakers offering odds on those outcomes that are below **expected value**.
+
+* **Arbitrage betting algorithms** take advantage of patterns in odds. The opportunity occurs when a better can guarantee a small profit by taking both sides of a bet. These algorithms do not try to predict the occurence of sporting outcomes but instead, the odds themselves. Mistakes with this approach are very costly.
+
+Once the bet is chosen, the algorithm should also choose the appropriate bet size, also called **bankroll management**. The above two approaches have been studied extensively and offer little reason for optimism to the novice bettor, but there is a third approach.
+
+Lisandro Kaunitz, Shenjun Zhong & Javier Kreiner, the authors of **Beating the bookies with their own numbers - and how the online sports betting market is rigged (2016)**, attempt a novel and brilliant approach to sports betting. Rather than compete with the bookmakers predictions or hope to identify arbitrage opportunities, Kunitz et al. try to beat the bookmakers by using their own predictions against them. In the paper, they demonstrate how to take advantage of mispriced odds using the implicit information in bookmakers' aggregate odds.
+
+But before you rush off to implement this method yourself, consider the authors real-world results. Five months of ten-hour days monitoring a server on which the model was deployed and immediately placing the recommended bets turned $4,000 into almost $5,000. After server fees, this worked out to having a job that pays $2/hour. The authors would have continued the experiment except for the fact that bookmakers began limiting the size and type of bets they were allowed to place, leading to the second conclusion of the paper: even if a bettor has a consistently profitable strategy, the bookies are under no obligation to continue taking his or her bets. The authors conclude that betting exchanges use discriminatory practices against successful gamblers, and that online sports betting remains a long-term losing proposition.
+
+## Overview
+
+Rather than spend months implementing a doomed strategy, I simply want to explore the odds data used in the 2016 paper mentioned above.
+
+
+

@@ -21,10 +21,6 @@ Paper: https://www.researchgate.net/publication/320296375_Beating_the_bookies_wi
 Blog: https://www.lisandrokaunitz.com/index.php/en/category/beatthebookies-en/
 
 ---
-- [Summary](#introduction)
-- [Data](#data)
-- [Reproduce it](#reproduce)
-- [Results](#results)
 
 ## SUMMARY 
 

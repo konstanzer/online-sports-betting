@@ -2,7 +2,7 @@
 
 ## INTRODUCTION
 
-I made my first bet in high school. I was sure the New York Yankees would beat the Arizona Diamondbacks in the World Series but I lost five dollars. Even so, getting even odds was a good bet. No betting exchange would have given me those odds on the heavily favored Yankees. The fact is, every solvent betting exchange offers odds at fair value, minus a commission. The bet functions like betting black on an American roulette wheel: the probability of black is not 18/36 but 18/38 because the house claims 0 and 00 for itself. Bookmakers pay data scientists very well to make sure the exchange's odds are accurately estimating the probability of various sporting event outcomes. For this reason, most value betting strategies are long-term losers.
+I made my first sports bet in 8th grade. I was sure the New York Yankees would beat the Arizona Diamondbacks in the World Series but I lost five dollars. Even so, getting even odds was a good bet. No betting exchange would have given me those odds on the heavily favored Yankees. The fact is, every solvent betting exchange offers odds at fair value, minus a commission. The bet functions like betting black on an American roulette wheel: the probability of black is not 18/36 but 18/38 because the house claims 0 and 00 for itself. Bookmakers pay data scientists very well to make sure the exchange's odds are accurately estimating the probability of various sporting event outcomes. For this reason, most value betting strategies are long-term losers.
 
 Betting algorithms are programs designed to identify profitable betting opportunities by analyzing large amounts of data. Most fall into one of two categories: **value** bets or **arbitrage** bets.
 

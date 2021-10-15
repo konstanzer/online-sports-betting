@@ -16,15 +16,19 @@ Thanks to Lisandro Kaunitz, Shenjun Zhong & Javier Kreiner, there is a third app
 
 Lisandro Kaunitz details his team's real-world results on his personal blog. Five months of ten-hour days monitoring a server and hastily placing the recommended bets turned $4,000 into $5,000. After server fees, this worked out to having a job that pays $2/hour. Nevetheless, th team was having a blast and would have continued the experiment if not for the fact that bookmakers began limiting the size and type of bets they were allowed to place. Bookies are under no obligation to continue taking bets if they don't believe it's in there best interest and Kaunitz was barred from most bookmakers' platforms.
 
-Paper: https://www.researchgate.net/publication/320296375_Beating_the_bookies_with_their_own_numbers_-_and_how_the_online_sports_betting_market_is_rigged
+Link to paper: https://www.researchgate.net/publication/320296375_Beating_the_bookies_with_their_own_numbers_-_and_how_the_online_sports_betting_market_is_rigged
 
-Blog: https://www.lisandrokaunitz.com/index.php/en/category/beatthebookies-en/
+Kaunitz's Blog: https://www.lisandrokaunitz.com/index.php/en/category/beatthebookies-en/
 
 ---
 
 ## SUMMARY 
 
 I set out to create a value betting algorithm for this project but the paper linked to above convinced me it would be a lesson in futility. I believe strategies based on team and player attributes are very unlikely to compete successfully with the models bookmakers' use to set odds. Aggregating many bookmakers' odds, however, can tell a bettor when an individual bookmaker is offering mispriced odds. Furthermore, a strategy that exploits these opportunities repeatedly can significantly outperform random betting in the long-term. In this repo, I create such a model using soccer match data while following Kaunitz's method closely.
+
+*Figure 1*.  A bettor making $50 bets using the recommended strategy would have made $97 thousand between 2005 and 2015. The random better (using prior probabilities of soccer match outcomes and placing an equal number bets) loses $129 thousand over the same period. (y-axis in US dollars, x-axis represents a ten year span of time)
+
+<img src="img/two_bettors.png" width="900"/>
 
 ## DATA
 
@@ -60,7 +64,8 @@ The prepared dataset in the form of csv files is available for download at https
 
 Code or visualizing the odds is contained in the notebook. I used a linear regression (OLS) model and Pearson correlation to evaluate the consensus probabilities of bookmakers. I confirmed the hypothesis that aggregate odds are a strong predictor of the underlying probabilty of sporting event outcomes.
 
-<img src="img/cons_prob.png" width="600"/>
+*Figure 2*.  The key point underlying the strategy. Bookie's provide odds of a soccer team winning, losing, or drawing the match at game time. The average of these adds is almost exactly the true, underlying probability of the event. Any bookie offering odds implicitly above this underlying probability, after accounting for a commission, is likely undervaluing their odds.
+<img src="img/cons_prob.png" width="540"/>
 
 3. Build a model to identify mispriced odds.
 
@@ -71,10 +76,6 @@ The author's built the original model in MATLAB while my notebook is in Python. 
 The mispriced odds identification model *significantly outperforms* a random betting strategy using the prior probabilities of game outcomes, as confirmed in the notebook using a Welch's t-test comparing bet results.
 
 <img src="img/results.png" width="900"/>
-
-A bettor making $50 bets using the recommended strategy would have made ~ $97,000 between 2005 and 2015. The random better loses ~ $129,000 over the same period.
-
-<img src="img/two_bettors.png" width="600"/>
 
 The next step is to create a model capable of evaluating bookmakers' continuous odds in order to make predictions in real-time.
 

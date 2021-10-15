@@ -23,8 +23,7 @@ Blog: https://www.lisandrokaunitz.com/index.php/en/category/beatthebookies-en/
 ---
 - [Summary](#introduction)
 - [Data](#data)
-- [Reproducing the project](#reproduce)
-- [Hypotheses](#hypotheses)
+- [Reproduce it](#reproduce)
 - [Results](#results)
 
 ## SUMMARY 
@@ -51,33 +50,33 @@ Kaunitz, et al. collected historical closing odds (i.e. odds provided at game-ti
 
 **Home win** data repeats for **away win** and **draw** (not shown), the other two possible outcomes of a soccer match.
 
-A full list of the bookmakers,
+A full list of the bookmakers:
 ---
 Interwetten https://www.interwetten.com/en/sportsbook, bwin https://sports.bwin.com/en/sports, bet-at-home https://www.bet-at-home.com/en/sport, Unibet https://www.bet-at-home.com/en/sport, Stan James http://stanjames-betting.com/, Expekt https://www.expekt.com/en-fi, 10Bet https://www.10bet.com/sports/, William Hill https://www.williamhill.com/, bet365 https://www.nj.bet365.com/#/HO/, Pinnacle Sports https://www.pinnacle.com/en/, DOXXbet https://m.doxxbet.com.lr/ui/#/, Betsafe https://www.betsafe.com/en, Betway https://betway.com/en/sports, 888sport https://www.888sport.com, Ladbrokes https://sports.ladbrokes.com/, Betclic https://www.betclic.com/en/sports-betting/, Sportingbet https://sports.sportingbet.com/en/sports, myBet , Betsson, 188BET, Jetbull, Paddy Power, Tipico, Coral, SBOBET, BetVictor, 12BET, Titanbet, Youwin, ComeOn, Betadonis, Betfair
 
-## Reproducing the project
+## REPRODUCE IT
 
 1. Acquire the prepared data
 
-The prepared dataset in the form of csv files is available for download at https://www.kaggle.com/austro/beat-the-bookie-worldwide-football-dataset
-
-The notebook included in this repository uses only the file "closing_odds.csv". The csv file is a matrix of games (rows) x features (teams, scores, league, etc).
+The prepared dataset in the form of csv files is available for download at https://www.kaggle.com/austro/beat-the-bookie-worldwide-football-dataset. The notebook included in this repository uses only the file "closing_odds.csv". The csv file is a matrix of soccer games (rows) x features (teams, scores, league, etc).
 
 2. Exploration of odds data.
 
-The code is contained in the notebook. I used a linear regression (OLS) model and Pearson correlation to evauate the consensus probabilities of the bookmakers confirming the hypothesis that aggregate odds are a strong predictor of the underlying probabilty of sporting event outcomes.
+Code or visualizing the odds is contained in the notebook. I used a linear regression (OLS) model and Pearson correlation to evaluate the consensus probabilities of bookmakers. I confirmed the hypothesis that aggregate odds are a strong predictor of the underlying probabilty of sporting event outcomes.
 
 <img src="img/cons_prob.png" width="600"/>
 
 3. Build a model to identify mispriced odds.
 
-The author's built the original model in MATLAB while my notebook is in Python. I encourage the interested reader to follow along with the paper mentioned in this readme's introduction. There you will find lengthy explanations of the betting strategy. 
+The author's built the original model in MATLAB while my notebook is in Python. I encourage the interested reader to follow along with the paper mentioned in this readme's introduction. There you will find full mathematical explanations of the betting strategy. 
 
-## Results
+## RESULTS
 
-The mispriced odds model *significantly outperforms* a random betting strategy using the prior probabilities of game outcomes.
+The mispriced odds identification model *significantly outperforms* a random betting strategy using the prior probabilities of game outcomes, as confirmed in the notebook using a Welch's t-test comparing bet results.
 
-<img src="img/results.png" width="600"/>
+<img src="img/results.png" width="900"/>
+
+A bettor making $50 bets using the recommended strategy would have made ~ $97,000 between 2005 and 2015. The random better loses ~ $129,000 over the same period.
 
 <img src="img/two_bettors.png" width="600"/>
 

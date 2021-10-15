@@ -63,12 +63,12 @@ The prepared dataset in the form of csv files is available for download at https
 
 Code or visualizing the odds is contained in the notebook. I used a linear regression (OLS) model and Pearson correlation to evaluate the consensus probabilities of bookmakers. I confirmed the hypothesis that aggregate odds are a strong predictor of the underlying probabilty of sporting event outcomes.
 
-*Figure 2*.  The key point underlying the strategy. Bookie's provide odds of a soccer team winning, losing, or drawing the match at game time. The average of these adds is almost exactly the true, underlying probability of the event. Any bookie offering odds implicitly above this underlying probability, after accounting for a commission, is likely undervaluing their odds. (cutoff text of y-axis is the actual percentage of correct predictions at the given estimated probability)
+*Figure 2*.  The key point underlying the strategy. Bookie's provide odds of a soccer team winning, losing, or drawing the match at game time. The average of these odds is almost exactly the true, underlying probability of the event. Any bookie offering odds implicitly above this underlying probability, after accounting for a commission, is likely undervaluing their odds. (cutoff text of y-axis is the actual percentage of correct predictions at the given estimated probability)
 <img src="img/cons_prob.png" width="540"/>
 
 3. Build a model to identify mispriced odds.
 
-The author's built the original model in MATLAB while my notebook is in Python. I encourage the interested reader to follow along with the paper mentioned in this readme's introduction. There you will find full mathematical explanations of the betting strategy. 
+The original model was built in MATLAB while my notebook is in Python. I encourage the interested reader to follow along with the paper mentioned in this readme's introduction. There you will find full mathematical explanations of the betting strategy. 
 
 ## RESULTS
 

@@ -1,7 +1,8 @@
 #Data
 .csv
-.xls
-.xlsx
+/odds
+#Selenium driver
+geckodriver.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
